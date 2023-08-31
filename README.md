@@ -1,5 +1,7 @@
 # Hotel User Dashboard
 
+![Travel Hotel dashboard](https://res.cloudinary.com/dem2xvk2e/image/upload/v1693493592/chat/dywtu6stxci3mw8a9lmg.png)
+
 Welcome to the Hotel User Dashboard! This React-based dashboard provides hotel users like you with the tools to efficiently manage hotel booking requests. The project is set up with Vite for fast development and hot module reloading.
 
 ### Installation and Run
