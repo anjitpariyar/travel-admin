@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 
 const Login = ({ onLogin }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("anjitpariyar69@gmail.com");
+  const [password, setPassword] = useState("admin123");
+  const [error, setError] = useState("");
 
   const handleSignIn = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('/auth/login', {
+      const response = await axios.post("/auth/login", {
         email,
         password,
       });
-      const accessCode = response.data.data.access_token
-      sessionStorage.setItem('accessCode', accessCode);
+      const accessCode = response.data.data.access_token;
+      sessionStorage.setItem("accessCode", accessCode);
       onLogin(accessCode);
     } catch (error) {
       setError(error.response.data.msg);
@@ -28,7 +28,10 @@ const Login = ({ onLogin }) => {
       {error && <p className="text-red-500 mb-4">{error}</p>}
       <form onSubmit={handleSignIn}>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="email"
+          >
             Email
           </label>
           <input
@@ -41,7 +44,10 @@ const Login = ({ onLogin }) => {
           />
         </div>
         <div className="mb-6">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="password"
+          >
             Password
           </label>
           <input

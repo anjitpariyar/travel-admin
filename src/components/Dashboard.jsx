@@ -128,6 +128,7 @@ const Dashboard = ({ accessCode, setAccessCode }) => {
                   <th className="py-3 px-6">End Date</th>
                   <th className="py-3 px-6">Statue</th>
                   <th className="py-3 px-6">Action</th>
+                  <th className="py-3 px-6">View Details</th>
                 </tr>
               </thead>
               <tbody className="text-gray-600 divide-y">
@@ -158,6 +159,13 @@ const Dashboard = ({ accessCode, setAccessCode }) => {
                         status={item.booking.status}
                         updateStatus={handleUpdateStatus}
                       />
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <Link to={`/booking/${item.booking._id}`}>
+                        <button class="bg-transparent hover:bg-blue text-blue-dark font-semibold  py-2 px-4 border border-blue  rounded">
+                          View details
+                        </button>
+                      </Link>
                     </td>
                   </tr>
                 ))}
